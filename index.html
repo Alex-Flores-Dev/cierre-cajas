@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/reporte.js"></script>
+</head>
+<body>
+  <form action="generate_reporte.php" method="post" name="frm" onsubmit="return validacion();">
+    <h1>Cierre de Cajas</h1>
+    <div>
+      <div>
+        <label for="usuario">Usuario</label>
+        <input type="text" placeholder="instruzca el usuario" name="usuario">
+      </div>
+      <div>
+        <label for="usuario">Contraseña</label>
+        <input type="password" placeholder="introduzca su contraseña" name="contraseña">
+      </div>
+      <div>
+        <label for="ciudad">Ciudad</label>
+        <input type="text" name="ciudad">
+      </div>
+      <div>
+        <label for="Agencia">Agencia</label>
+        <input type="text" name="agencia">
+      </div>
+      <div>
+        <label for="fecha">Seleccione la Fecha</label>
+        <input id="fecha_ini" type="date" name="fecha_ini" data-date-format="DD MMMM YYYY"><input type="date" id="fecha_fin" name="fecha_fin">
+      </div>
+      <div>
+        <input class="button" type="submit" value="save">
+      </div>
+  </form>
+</body>
+</html>
