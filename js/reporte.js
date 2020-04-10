@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: "#app",
+    el: "#form",
     data:{
         ciudad:null,
         agencia:null,
@@ -20,24 +20,20 @@ var app = new Vue({
             'El Alto':[{agencia:"La Paggz",codigo:113,id:1}],
         },
     },
-    methods:{
-
-
-    }
+    methods:{}
 });
 
 
-
-function validacion(){
-    var fecha_ini;
-    var fecha_fin;
-    fecha_ini = document.getElementById("fecha_ini").value;
-    fecha_fin = document.getElementById("fecha_fin").value;
-    if(fecha_fin<fecha_ini){
-        alert("no se puede enviar");
-        return false;
-    }
-
+function block(){
+    const $form = document.querySelector('#form')
+    event.preventDefault()
+    const formData= new FormData($form)
+    fetch('./generate_reporte.php',{
+        method:'POST',
+        body:formData,
+    })
+    document.getElementById("enviar").disabled = true;
+    document.getElementById("enviar").val = "Cargando";
 }
 
 
