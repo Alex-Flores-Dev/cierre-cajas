@@ -16,12 +16,12 @@ var app = new Vue({
                 {ciudad:"Pando",id:10}
         ],
         agencias:{
-            1:[{agencia:"El Alfto",codigo:123,id:1},{agencia:"El Alghto",codigo:123123,id:2},{agencia:"LadfsPaz",codigo:11423,id:3}],
-            2:[{agencia:"La Paggz",codigo:113,id:1}],
+            'La Paz':[{agencia:"16 de Julio",codigo:123,id:1},{agencia:"Ventilla",codigo:123123,id:2},{agencia:"LadfsPaz",codigo:11423,id:3}],
+            'El Alto':[{agencia:"La Paggz",codigo:113,id:1}],
         },
     },
     methods:{
-        enviar
+
 
     }
 });
