@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="js/reporte.js"></script>
+
 </head>
 <body>
   <form action="generate_reporte.php" method="post" name="frm" onsubmit="return validacion();">
@@ -18,14 +18,27 @@
         <label for="usuario">Contraseña</label>
         <input type="password" placeholder="introduzca su contraseña" name="contraseña">
       </div>
-      <div>
-        <label for="ciudad">Ciudad</label>
-        <input type="text" name="ciudad">
+      <div id="app">
+        <div>
+          <label for="ciudad">Ciudad</label>
+          <select v-model="ciudad" name="ciudad">
+            <option v-for="option in departamentos" v-bind:value="option.id" v-bind:key="option.id">
+                {{ option.ciudad }}
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <label for="Agencia">Agencia</label>
+          <select v-model="agencia" name="agencia">
+            <option v-for="option in agencias[ciudad]" v-bind:value="option.agencia" v-bind:key="option.id">
+                {{ option.agencia }}
+            </option>
+          </select>
+        </div>
       </div>
-      <div>
-        <label for="Agencia">Agencia</label>
-        <input type="text" name="agencia">
-      </div>
+
+
       <div>
         <label for="fecha">Seleccione la Fecha</label>
         <input id="fecha_ini" type="date" name="fecha_ini" data-date-format="DD MMMM YYYY"><input type="date" id="fecha_fin" name="fecha_fin">
@@ -34,5 +47,7 @@
         <input class="button" type="submit" value="save">
       </div>
   </form>
+  <script src="js/vue.js"></script>
+  <script src="js/reporte.js"></script>
 </body>
 </html>
