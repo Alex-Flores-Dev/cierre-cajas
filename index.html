@@ -1,67 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/favicon.ico">
-  <title>Cierre de Cajas</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico">
+    <title>Cierre de Cajas</title>
     <script src="js/jquery.min.js"></script>
-
-
-
-</head>
-
-<body>
-  <!--   onsubmit="return validacion();" -->
-  <div id="contenedor">
-    <form method="post" name="frm" id="form">
-      <h1>Cierre de Cajas</h1>
-      <div class="form-group">
-        <label for="usuario">Usuario</label>
-        <input type="text" placeholder="instruzca el usuario" id="usuario" name="usuario" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="usuario">Contraseña</label>
-        <input type="password" placeholder="introduzca su contraseña" id="contraseña" name="contraseña"class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="ciudad">Ciudad</label>
-        <select v-model="ciudad" id="ciudad" name="ciudad" class="form-control">
-          <option v-for="option in departamentos" :value="option.ciudad" :key="option.id">
-            {{ option.ciudad }}
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="Agencia">Agencia</label>
-        <select v-model="agencia" id="agencia" name="agencia" class="form-control">
-          <option v-for="option in agencias[ciudad]" v-bind:value="option.agencia" v-bind:key="option.id">
-            {{ option.agencia }}
-          </option>
-        </select>
-      </div>
-        <label for="fecha">Seleccione la Fecha</label>
-      <div class="form-row">
-        <div class="col-md-6 mb-3">
-          <label for="fecha">Desde</label>
-          <input id="fecha_ini" type="date" name="fecha_ini" class="form_datetime">
-
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!--   onsubmit="return validacion();" -->
+    <div id="contenedor">
+      <form method="post" name="frm" id="form">
+        <h1>Cierre de Cajas</h1>
+        <div class="form-group">
+          <label for="usuario">Usuario</label>
+          <input type="text" placeholder="Usuario" id="usuario"
+            name="usuario" class="form-control">
         </div>
-        <div class="col-md-6 mb-3">
-          <label for="fecha">Hasta</label>
-          <input type="date" id="fecha_fin" name="fecha_fin" class="form_datetime">
+        <div class="form-group">
+          <label for="usuario">Contraseña</label>
+          <input type="password" placeholder="Contraseña"
+            id="contraseña" name="contraseña" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <select v-model="ciudad" id="ciudad" name="ciudad"
+            class="form-control">
+            <option disabled value="">Por favor Seleccione</option>
+            <option v-for="option in departamentos" :value="option.ciudad"
+              :key="option.id">
+              {{ option.ciudad }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Agencia">Agencia</label>
+          <select v-model="agencia" id="agencia" name="agencia"
+            class="form-control">
+            <option disabled value="">Por favor Seleccione</option>
+            <option v-for="option in agencias[ciudad]"
+              v-bind:value="option.agencia" v-bind:key="option.id">
+              {{ option.agencia }}
+            </option>
+          </select>
+        </div>
+        <label for="fecha">Seleccione la Fecha :</label>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="fecha">Desde</label>
+            <input id="fecha_ini" type="date" name="fecha_ini"
+              class="form_datetime">
+
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="fecha">Hasta</label>
+            <input type="date" id="fecha_fin" name="fecha_fin"
+              class="form_datetime">
+          </div>
+        </div>
+        <div class="form-group">
+          <button id="enviar" onclick="block();" class="btn btn-primary">Solicitar</button>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Su solicitud esta siendo procesada</h4>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+          </div>
         </div>
       </div>
-      <div class="form-group">
-        <button id="enviar" onclick="block();" class="btn btn-primary">Solicitar Datos</button>
-      </div>
-    </form>
-  </div>
-  <script src="js/vue.js"></script>
+    </div>
 
-  <script src="js/reporte.js"></script>
-  <script src="js/validacion.js"></script>
-</body>
+
+    <script src="js/vue.js"></script>
+
+    <script src="js/reporte.js"></script>
+    <script src="js/validacion.js"></script>
+  </body>
 </html>

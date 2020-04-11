@@ -22,6 +22,8 @@ function block(){
     else{
         if(fecha_ini<=fecha_fin){
             document.getElementById("enviar").disabled = true;
+                $("#exampleModal").modal();
+
 
         }
         else{
@@ -30,3 +32,4 @@ function block(){
         }
     }
 }
+

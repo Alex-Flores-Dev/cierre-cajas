@@ -25,5 +25,7 @@ var app = new Vue({
 
 
 
-
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 
