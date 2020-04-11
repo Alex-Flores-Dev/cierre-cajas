@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="img/favicon.ico">
   <title>Cierre de Cajas</title>
+    <script src="js/jquery.min.js"></script>
+
 
 
 </head>
@@ -32,7 +34,7 @@
           </option>
         </select>
       </div>
-      <div>
+      <div class="form-group">
         <label for="Agencia">Agencia</label>
         <select v-model="agencia" id="agencia" name="agencia" class="form-control">
           <option v-for="option in agencias[ciudad]" v-bind:value="option.agencia" v-bind:key="option.id">
@@ -40,11 +42,12 @@
           </option>
         </select>
       </div>
-      <label for="fecha">Seleccione la Fecha</label>
+        <label for="fecha">Seleccione la Fecha</label>
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="fecha">Desde</label>
           <input id="fecha_ini" type="date" name="fecha_ini" class="form_datetime">
+
         </div>
         <div class="col-md-6 mb-3">
           <label for="fecha">Hasta</label>
@@ -56,8 +59,9 @@
       </div>
     </form>
   </div>
-
   <script src="js/vue.js"></script>
+
   <script src="js/reporte.js"></script>
+  <script src="js/validacion.js"></script>
 </body>
 </html>

@@ -24,17 +24,6 @@ var app = new Vue({
 });
 
 
-function block(){
-    const $form = document.querySelector('#form')
-    event.preventDefault()
-    const formData= new FormData($form)
-    fetch('./generate_reporte.php',{
-        method:'POST',
-        body:formData,
-    })
-    document.getElementById("enviar").disabled = true;
-    document.getElementById("enviar").val = "Cargando";
-}
 
 
 

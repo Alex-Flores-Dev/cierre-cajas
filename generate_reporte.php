@@ -19,7 +19,7 @@ $copia_fecha_ini=date("Y/m/d", strtotime($fecha_inicio));
 $copia_fecha_fin=date("Y/m/d", strtotime($fecha_final));
 # Datos complementarios para el nombre del archivo, separador y hora
 $hora=date("h:i:s A");
-$fecha_nombre=date("d-m-Y", strtotime($fecha_inicio));
+$fecha_nombre=date("d-m-Y");
 $separador=";";
 #PARA CREAR EL ARCHIVO Y ABRIR EN UN PATH DETERMINADO CON EL NOMBRE MODIFICADO
 $fi=fopen($path.DIRECTORY_SEPARATOR.$agencia.'_'.$fecha_nombre.'.txt','a');
